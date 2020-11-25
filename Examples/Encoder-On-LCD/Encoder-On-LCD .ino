@@ -19,16 +19,21 @@ int encSelect[2] = {101, 0}; // stores the last encoder used and direction {EncI
 const int EncNum = 5;  // number of rotary PrevEncoders
 
 // encoder pin connections to MCP23017
-const int EncPins[EncNum][2] = {
-  {1,0},    // enc:0 AA GPA0,GPA1 - pins 21/22 on MCP23017
-  {4,3},    // Enc2 -->  4,3
-  {7,6},    // Enc1 -->  7,6 
-  {13,14},  // enc:3 BB GPB6,GPB5 - pins 24/25 on MCP23017
-  {10,11},  // enc:4 AA GPB4,GPB3 - pins 21/22 on MCP23017
+const int EncPins[EncNum][2] = {// DT pin, CLK pin
+  {6,5},    // Enc 1 --> GPA6, GPA5
+  {3,2},    // Enc 2 --> GPA3, GPA2
+  {10,9},   // Enc 3 --> GPB2, GPB1
+  {12,13},  // Enc 3 --> GPB4, GPB5
+  {15,1},   // Enc 4 --> GPB7, GPA1
  
 };  
 
-const int ButPins[EncNum] = { 2, 5, 15, 12,9};    // button pins on PrevEncoders
+const int ButPins[EncNum] = {// Switch pin
+   7,   // Enc 1 --> GPA7
+   4,   // Enc 2 --> GPA4
+   8,   // Enc 3 --> GPB0
+   11,  // Enc 4 --> GPB5
+   14}; // Enc 5 --> GPB6
 
 int Counters[EncNum];  // keep aech encoder position
 char list[] = {'A','B','C','D','E','F','G','H','I','J','K'};
