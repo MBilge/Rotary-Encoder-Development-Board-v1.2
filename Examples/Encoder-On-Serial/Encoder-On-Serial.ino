@@ -97,7 +97,7 @@ void setup() {
 
   Serial.begin(9600);
 
-  MCP.begin(0);    // 0 = i2c address 0x20  
+  MCP.begin(0x27);    // 0 = i2c address 0x20  
 
   // setup the pins using loops, saves coding when you have a lot of PrevPrevPrevEncoders and buttons
   for (int n = 0; n < EncNum; n++) {
